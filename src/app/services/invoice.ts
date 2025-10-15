@@ -10,6 +10,15 @@ export class InvoiceService {
   private invoice: Invoice = invoiceData;
 
   getInvoice(): Invoice {
-    return this.invoice;
+    const total = this.calculateTotal();
+    return {... this.invoice, total};
+  }
+
+  //function to calculate the total cost of the invoice. The Item class has its own function to calculate its total cost.
+  calculateTotal() {
+  /*let total = 0;
+    this.invoice.items.forEach(item => total += item.total());
+    return total; */
+    return this.invoice.items.reduce((total, item) => total + item.total(), 0);
   }
 }
