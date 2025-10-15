@@ -1,5 +1,6 @@
 import { Invoice } from "../models/invoice";
 
+//In Angular, it is much easier to export a TS class than a JSON, hence we turned this JSON into TS
 export const invoiceData: Invoice = {
   id: 1,
   name: 'Componentes de PC',
