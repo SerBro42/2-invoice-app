@@ -15,6 +15,7 @@ export class InvoiceService {
   }
 
   //function to calculate the total cost of the invoice. The Item class has its own function to calculate its total cost.
+  //Currently, our data comes from a hardcoded TS file, instead of a JSON file, and so item.total() is not recognized. Thus, we write (item.price * item.quantity) instead
   calculateTotal() {
   /*let total = 0;
     this.invoice.items.forEach(item => total += item.total());
