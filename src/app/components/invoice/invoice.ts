@@ -5,10 +5,16 @@ import { InvoiceViewComponent } from '../invoice-view/invoice-view';
 import { CustomerViewComponent } from '../customer-view/customer-view';
 import { CompanyViewComponent } from '../company-view/company-view';
 import { ListTableItemsComponent } from '../list-table-items/list-table-items';
+import { TotalComponent } from '../total/total';
 
 @Component({
   selector: 'app-InvoiceComponent',
-  imports: [InvoiceViewComponent, CustomerViewComponent, CompanyViewComponent, ListTableItemsComponent],
+  imports: [InvoiceViewComponent,
+    CustomerViewComponent,
+    CompanyViewComponent,
+    ListTableItemsComponent,
+    TotalComponent
+  ],
   templateUrl: './invoice.html'
 })
 //We had to explicitly rename this to 'InvoiceComponent' so that it doesn't conflict with models/invoice

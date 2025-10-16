@@ -19,6 +19,6 @@ export class InvoiceService {
   /*let total = 0;
     this.invoice.items.forEach(item => total += item.total());
     return total; */
-    return this.invoice.items.reduce((total, item) => total + item.total(), 0);
+    return this.invoice.items.reduce((total, item) => total + (item.price * item.quantity), 0);
   }
 }

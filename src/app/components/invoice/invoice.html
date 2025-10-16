@@ -4,19 +4,20 @@
       <h2>Invoice example</h2>
     </div>
     <div class="card-body">
-      <invoice-view [id]="invoice.id" [name]="invoice.name"></invoice-view>
+      <invoice-view [id]="invoice.id" [name]="invoice.name" />
 
       <div class="row my-3">
         <div class="col">
-          <customer-view [client]="invoice.client"></customer-view>
+          <customer-view [client]="invoice.client" />
         </div>
 
         <div class="col">
-          <company-view [company]="invoice.company"></company-view>
+          <company-view [company]="invoice.company" />
         </div>
       </div>
 
-      <list-table-items [items]="invoice.items"></list-table-items>
+      <list-table-items [items]="invoice.items" />
+      <app-total [total]="invoice.total" />
     </div>
   </div>
 </div>
