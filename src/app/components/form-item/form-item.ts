@@ -21,4 +21,15 @@ export class FormItemComponent {
     quantity: ''
   }
 
+  //Function to add item.
+  onSubmit(): void {
+    this.addItemEventEmitter.emit({id: this.counterId, ...this.item});
+    this.counterId++;
+
+    this.item = {
+      product: '',
+      price: '',
+      quantity: ''
+    };
+  }
 }
