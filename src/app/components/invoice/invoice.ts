@@ -34,6 +34,7 @@ export class InvoiceComponent implements OnInit{
   //for larger arrays. If performance matters in the business logic, consider using splice() instead. This approach has the downside of if using OnPush or
   //relying on identity change for detection, the UI might not update unless you inform Angular.
   removeItem(id: number) {
-    this.invoice.items = this.invoice.items.filter(item => item.id != id);
+    //this.invoice.items = this.invoice.items.filter(item => item.id != id);
+    this.invoice = this.service.remove(id);
   }
 }
