@@ -34,8 +34,8 @@ export const invoiceData: any = {
     {
       id:3,
       product: 'Monitor Asus',
-      price: 899,
-      quantity: 1
+      price: 299,
+      quantity: 3
     }
   ]
 }

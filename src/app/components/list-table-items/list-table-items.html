@@ -7,12 +7,13 @@
         <th>product</th>
         <th>price</th>
         <th>quantity</th>
+        <th>remove</th>
       </tr>
     </thead>
     <tbody>
       @for (item of items; track $index) {
         <!-- instead of inserting just the selector of the row component, we insert a <tr> tag with the component selector inside -->
-        <tr row-item [item]="item"></tr>
+        <tr row-item [item]="item" (removeEventEmitter)="onRemove($event)"></tr>
       }
     </tbody>
   </table>

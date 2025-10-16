@@ -28,4 +28,12 @@ export class InvoiceComponent implements OnInit{
     this.invoice = this.service.getInvoice();
   }
 
+  //The function that finally deletes an item from the array. By means of filter(), we create a new array of items composed solely of
+  //items whos id is different from the one that we passed as parameter. Essentially, we take out the item with the id that's being deleted.
+  //Since filter() creates a new array from scratch, instead of reusing the previous array reference, this approach is inefficient memory-wise, especially
+  //for larger arrays. If performance matters in the business logic, consider using splice() instead. This approach has the downside of if using OnPush or
+  //relying on identity change for detection, the UI might not update unless you inform Angular.
+  removeItem(id: number) {
+    this.invoice.items = this.invoice.items.filter(item => item.id != id);
+  }
 }
