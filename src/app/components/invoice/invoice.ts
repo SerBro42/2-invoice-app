@@ -6,6 +6,7 @@ import { CustomerViewComponent } from '../customer-view/customer-view';
 import { CompanyViewComponent } from '../company-view/company-view';
 import { ListTableItemsComponent } from '../list-table-items/list-table-items';
 import { TotalComponent } from '../total/total';
+import { FormItemComponent } from '../form-item/form-item';
 
 @Component({
   selector: 'app-InvoiceComponent',
@@ -13,7 +14,8 @@ import { TotalComponent } from '../total/total';
     CustomerViewComponent,
     CompanyViewComponent,
     ListTableItemsComponent,
-    TotalComponent
+    TotalComponent,
+    FormItemComponent
   ],
   templateUrl: './invoice.html'
 })
