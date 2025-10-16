@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { Item } from '../../models/item';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'form-item',
@@ -22,14 +22,20 @@ export class FormItemComponent {
   }
 
   //Function to add item.
-  onSubmit(): void {
-    this.addItemEventEmitter.emit({id: this.counterId, ...this.item});
-    this.counterId++;
+  onSubmit(itemForm: NgForm): void {
+    if (itemForm.valid) {
 
-    this.item = {
-      product: '',
-      price: '',
-      quantity: ''
-    };
+      this.addItemEventEmitter.emit({id: this.counterId, ...this.item});
+      this.counterId++;
+
+      this.item = {
+        product: '',
+        price: '',
+        quantity: ''
+      };
+      //Without these, the validation error messages don't go away after successfully adding a product.
+      itemForm.reset();
+      itemForm.resetForm();
+    }
   }
 }
